@@ -17,7 +17,6 @@ Pipeflow can get theses logs from Pub/Sub and exports to GCS like the Data Flow.
  PUBSUB_SUBSCRIPTION | pubsub subscription
  BUCKET_NAME | gcs bucket name
  BUCKET_PREFIX | prefix directory name of gcs objects
- HEALTHCHECK_ENDPOINT | Cloud Run endpoint e.g: `https://yourservice-xxx.x.run.app`
 
 ## Service Accounts
 

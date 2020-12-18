@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 
 	"github.com/days365/pipeflow/exporter"
 	"github.com/days365/pipeflow/fetcher"
@@ -38,28 +37,6 @@ func main() {
 
 		if err = http.ListenAndServe(":8080", nil); err != nil {
 			log.Println("[error]", err)
-		}
-	}()
-
-	// for cloud run healthcheck to run continuously.
-	go func() {
-		endpoint := os.Getenv("HEALTHCHECK_ENDPOINT")
-		ticker := time.NewTicker(time.Second * 10)
-
-		if endpoint != "" {
-			for {
-				select {
-				case <-ticker.C:
-					res, err := http.DefaultClient.Get(endpoint)
-					if err != nil {
-						log.Println("[error] failed to healthcheck", err)
-						continue
-					}
-					res.Body.Close()
-				default:
-					continue
-				}
-			}
 		}
 	}()
 
