@@ -26,7 +26,7 @@ You need create a service accounts has Storage Write and Cloud Pub/Sub Subscribe
 
 1. Create Cloud Pub/Sub topic and subscription
 2. Create GCS bucket
-3. Create Service Account for pipeflow(e.g.: pipeflow@yourprojectid.iam.gserviceaccount.com).
+3. Create Service Account for pipeflow(e.g.: `pipeflow@yourprojectid.iam.gserviceaccount.com`).
     - attach Pub/Sub Subscriber and Storage Object Creator roles.
 4. Push pipeflow image
 
