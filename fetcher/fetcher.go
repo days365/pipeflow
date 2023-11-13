@@ -48,6 +48,7 @@ func (f Fetcher) Start(ctx context.Context, projectID, sub string) error {
 				f.exp.In(m)
 			})
 			if err != nil {
+				log.Println("[error] subsc.Receive failed:", err)
 				return err
 			}
 
