@@ -2,9 +2,9 @@
 set -e
 
 read -p "gcp project id: " gcp_project_id
-read -p "cloud run region: " region
+read -p "cloud run region (default: asia-northeast1): " region
 read -p "repository name: " repository_name
-read -p "your repository region: " repo_region
+read -p "your repository region (default: asia): " repo_region
 read -p "cloud pubsub subscription: " pubsub_sub
 read -p "gcs bucket name: " bucket_name
 
