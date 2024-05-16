@@ -1,6 +1,6 @@
 module github.com/days365/pipeflow
 
-go 1.18
+go 1.22.1
 
 require (
 	cloud.google.com/go/pubsub v1.17.0
