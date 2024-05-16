@@ -35,15 +35,15 @@ You need create a service accounts has Storage Write and Cloud Pub/Sub Subscribe
 $ make build/image
 
 # <projcet_id> your gcp project id
-$ docker tag pipeflow:latest asia.gcr.io/<project_id>/pipeflow:latest
-$ docker push asia.gcr.io/<project_id>/pipeflow:latest
+$ docker tag pipeflow:latest asia.gcr.io/<project_id>/<repository_name>/pipeflow:latest
+$ docker push asia-docker.pkg.dev/<project_id>/<repository_name>/pipeflow:latest
 ```
 
 5. Deploy to Cloud Run
 ```
 $ gcloud beta run deploy pipeflow \
 		--project <project_id> \
-		--image="asia.gcr.io/<project_id>/pipeflow:latest" \
+		--image="asia-docker.pkg.dev/<project_id>/<repository_name>/pipeflow:latest" \
 		--port=8080 \
 		--region=asia-northeast1 \
 		--platform=managed \
